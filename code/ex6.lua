@@ -48,10 +48,28 @@ print("Cachorro ".."Quente")
 permite fazer buscas e substituir padrões
 string.find
 string.match
-string.gsub
+string.sub
 e dentre outras
 ]]
 
 print("!"..string.sub(s3, 5, 7).."!")
 print(string.upper(s5))
 print(string.lower(s3))
+
+--Vai mostrar de forma crua a posição numerada das palavras que você esta procurando, ou melhor,a  posição das letras em especifico, e se difere se vc colocar
+--palavras em maiusculo ou minuscuolo, podendo retornar nill
+print(string.find(s3,string.lower("ok")))
+print(string.find(s3,"OK"))
+ini, fim = string.find(s3, "ok")
+print(string.sub(s3, ini, fim))
+--O que foi feito foi o uso de variaveis como coordenadas em uma localização de uma string em outra variavel com valor string 
+--NBão precisa de uma string fixca, mas em geral um padrão, que pode, de certa forma, cobrir mais caracteres do que eu proprio estou dizendo aénas usando um 
+--valor string
+ini, fim = string.find(s5, "%w+")
+--% quer dizer que eu estou introduzindo um padrão
+--W qualquer caracter alfanumerico(numeros, letras e Undescore[talvez])
+--+ Uma ou mais repetições
+--Essa configuração de comando pode identificar uma frase inteira, se limitando a espaços vazios e acentos isolados
+print(ini, fim)
+print(string.sub(s5, ini, fim))
+
